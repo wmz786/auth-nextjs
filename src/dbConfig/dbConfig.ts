@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export async function connect() {
     try {
@@ -6,16 +6,19 @@ export async function connect() {
         const connection = mongoose.connection;
 
         connection.on('connected', () => {
-            console.log("MongoDB connected successfully!");
-        });
+            console.log('MongoDB connected successfully');
+        })
 
         connection.on('error', (err) => {
-            console.log("MongoDB connection error. please make sure mongo is running. " + err);
+            console.log('MongoDB connection error. Please make sure MongoDB is running. ' + err);
             process.exit();
-        });
+        })
+
     } catch (error) {
-        console.log("Something went wrong with database connection!");
+        console.log('Something goes wrong!');
         console.log(error);
         
     }
+
+
 }
